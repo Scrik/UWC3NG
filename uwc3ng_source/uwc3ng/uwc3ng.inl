@@ -591,6 +591,3 @@ public UWC3NG_ShowSpecInfo( id, iTargetID )
 	// Show the message
 	show_hudmessage( id, szMsg );
 }
-/* AMXX-Studio Notes - DO NOT MODIFY BELOW HERE
-*{\\ rtf1\\ ansi\\ deff0{\\ fonttbl{\\ f0\\ fnil Tahoma;}}\n\\ viewkind4\\ uc1\\ pard\\ lang1031\\ f0\\ fs16 \n\\ par }
-*/
