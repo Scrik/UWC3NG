@@ -1,0 +1,9 @@
+<body bgcolor=#000000 text=#FFB000>
+<center><b>The following players are online</b></center><p>
+<center><table width=800 border=1 cellpadding=4 cellspacing=4>
+<tr><td>Name</td><td>Team</td><td>Level</td></tr>
+<tr><td>9pyc</td><td>CT</td><td>28</td></tr>
+<tr><td>Vampir</td><td>Terrorist</td><td>26</td></tr>
+<tr><td>GBPlayer</td><td>CT</td><td>21</td></tr>
+</table></center>
+
