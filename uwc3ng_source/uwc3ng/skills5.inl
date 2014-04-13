@@ -685,15 +685,12 @@ public _SKILL_SuicideExplode( parm[5] )
 			}
 			
 			// Magic resistance check
-			else if ( p_data_resist[iTargetID][RESIST_MAGIC] > 0 )
+			else if ( random_float( 0.0, 1.0 ) <= ( p_data_resist[iTargetID][RESIST_MAGIC] / MAX_RESIST_POINTS )
 			{
-				if ( random_float( 0.0, 1.0 ) <= ( p_data_resist[iTargetID][RESIST_MAGIC] / MAX_RESIST_POINTS ) )
-				{
-					client_print( iTargetID, print_chat, "%s Your magic resistance protects you from a suicide bomber attack", MOD_NAME );
-					client_print( id, print_chat, "%s Your suicide bomber attack is deflected by your target's magic resistance", MOD_NAME );
-					
-					bIgnoreDmg[iTargetID] = true;
-				}
+				client_print( iTargetID, print_chat, "%s Your magic resistance protects you from a suicide bomber attack", MOD_NAME );
+				client_print( id, print_chat, "%s Your suicide bomber attack is deflected by your target's magic resistance", MOD_NAME );
+				
+				bIgnoreDmg[iTargetID] = true;
 			}
 			
 			// The user isn't immune!
