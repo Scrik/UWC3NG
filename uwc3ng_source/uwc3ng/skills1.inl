@@ -69,7 +69,7 @@ public SKILL_CS_Reincarnation( id )
 		if ( iSkillLevel > 0 )
 		{
 
-			if ( random_float( 0.0, 1.0 ) <= p_ankh[iSkillLevel-1] )
+			if ( random_float( 0.01, 1.00 ) <= p_ankh[iSkillLevel-1] )
 			{
 				bGiveWeapons = true;		
 			}
@@ -127,7 +127,7 @@ public SKILL_Impale( iAttacker, iVictim )
 		}
 		
 		// Is this an impale hit?
-		if ( random_float( 0.0, 1.0 ) <= iImpaleChance )
+		if ( random_float( 0.01, 1.00 ) <= iImpaleChance )
 		{
 			// Play the impale sound
 			emit_sound( iVictim, CHAN_STATIC, g_szSounds[SOUND_IMPALE], 1.0, ATTN_NORM, 0, PITCH_NORM );

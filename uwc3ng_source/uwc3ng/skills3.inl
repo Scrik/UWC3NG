@@ -424,7 +424,7 @@ public SKILL_CriticalStrike( iAttacker, iVictim, iDamage, iHitPlace, iWeapon )
 	if ( iSkillLevel )
 	{
 		// Will this hit a critical hit?
-		if ( random_float( 0.0, 1.0 ) <= p_critical[iSkillLevel-1] )
+		if ( random_float( 0.01, 1.00 ) <= p_critical[iSkillLevel-1] )
 		{
 			// Calculate the bonus dmg
 			new iBonusDamage = floatround( float( iDamage ) * p_critical[iSkillLevel-1] );
@@ -542,7 +542,7 @@ public SKILL_CarrionBeetles( iAttacker, iVictim, iHitPlace )
 		}
 		
 		// Will this hit a Carrion Beetles hit?
-		if ( random_float( 0.0, 1.0 ) <= iCarrionChance )
+		if ( random_float( 0.01, 1.00 ) <= iCarrionChance )
 		{
 			new vVictimOrigin[3], vAttackerorigin[3];
 			get_user_origin( iVictim, vVictimOrigin );
@@ -639,7 +639,7 @@ public SKILL_SteelSkin( iAttacker, iVictim, iDamage )
 	if ( iSkillLevel )
 	{
 		// Will this hit a steel skin hit?
-		if ( random_float( 0.0, 1.0 ) <= p_steel[iSkillLevel-1] )
+		if ( random_float( 0.01, 1.00 ) <= p_steel[iSkillLevel-1] )
 		{
 			static iArmor, CsArmorType:ArmorType;
 			
@@ -689,7 +689,7 @@ public SKILL_ShadowStrike( iAttacker, iVictim, iHitPlace )
 		}
 		
 		// Will this hit a ShadowStrike hit?
-		if ( random_float( 0.0, 1.0 ) <= iShadowChance )
+		if ( random_float( 0.01, 1.00 ) <= iShadowChance )
 		{
 			new vVictimOrigin[3], vAttackerOrigin[3]
 			get_user_origin( iVictim, vVictimOrigin );
@@ -772,7 +772,7 @@ public SKILL_Blink( id )
 	// User has the ability, lets initiate a "check"
 	if ( iSkillLevel )
 	{
-		if ( random_float( 0.0, 1.0 ) <= p_blink[iSkillLevel-1] )
+		if ( random_float( 0.01, 1.00 ) <= p_blink[iSkillLevel-1] )
 		{
 			p_data_b[id][PB_BLINK] = true;
 			client_print( id, print_chat, "%s You will now be immune to all ultimates", MOD_NAME );

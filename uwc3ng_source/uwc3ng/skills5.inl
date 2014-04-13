@@ -153,7 +153,7 @@ public _SKILL_ChainLightningInit( parm[5] )
 				else if ( p_data_resist[iTarget][RESIST_LIGHTNING] > 0 )
 				{
 					// Check if the player will resist this hit
-					if ( random_float( 0.0, 1.0 ) <= ( p_data_resist[iTarget][RESIST_LIGHTNING] / MAX_RESIST_POINTS ) )
+					if ( ( random_float( 0.01, 1.00 ) * MAX_RESIST_POINTS ) <= p_data_resist[iTarget][RESIST_LIGHTNING] )
 					{
 						client_print( iTarget, print_chat, "%s Your resistance to electricity absorbs all of the Chain Lightning damage", MOD_NAME );
 						client_print( iCaster, print_chat, "%s Your chain lightning attack is deflected by your target's electricity resistance", MOD_NAME );
@@ -267,7 +267,7 @@ public SKILL_Entangle( iCaster, iEnemy )
 	// Magic resistance check
 	if ( p_data_resist[iEnemy][RESIST_MAGIC] > 0 )
 	{
-		if ( random_float( 0.0, 1.0 ) <= ( p_data_resist[iEnemy][RESIST_MAGIC] / MAX_RESIST_POINTS ) )
+		if ( ( random_float( 0.01, 1.00 ) * MAX_RESIST_POINTS ) <= p_data_resist[iEnemy][RESIST_MAGIC] )
 		{
 			client_print( iEnemy, print_chat, "%s Your magic resistance protects you from a entangle roots attack", MOD_NAME );
 			client_print( iCaster, print_chat, "%s Your entangle roots attack is deflected by your target's magic resistance", MOD_NAME );
@@ -450,7 +450,7 @@ public SKILL_FlameStrikeInit( iCaster, iTarget )
 	// Fire resistance check
 	if ( p_data_resist[iTarget][RESIST_FIRE] > 0 )
 	{
-		if ( random_float( 0.0, 1.0 ) <= ( p_data_resist[iTarget][RESIST_FIRE] / MAX_RESIST_POINTS ) )
+		if ( ( random_float( 0.01, 1.00 ) * MAX_RESIST_POINTS ) <= p_data_resist[iTarget][RESIST_FIRE] )
 		{
 			client_print( iTarget, print_chat, "%s Your fire resistance protects you from a flame strike attack", MOD_NAME );
 			client_print( iCaster, print_chat, "%s Your flame strike attack is deflected by your target's fire resistance", MOD_NAME );
@@ -685,7 +685,7 @@ public _SKILL_SuicideExplode( parm[5] )
 			}
 			
 			// Magic resistance check
-			else if ( ( random_float( 0.0, 1.0 ) * MAX_RESIST_POINTS ) <= p_data_resist[iTargetID][RESIST_MAGIC] )
+			else if ( ( random_float( 0.01, 1.00 ) * MAX_RESIST_POINTS ) <= p_data_resist[iTargetID][RESIST_MAGIC] )
 			{
 				client_print( iTargetID, print_chat, "%s Your magic resistance protects you from a suicide bomber attack", MOD_NAME );
 				client_print( id, print_chat, "%s Your suicide bomber attack is deflected by your target's magic resistance", MOD_NAME );
@@ -764,7 +764,7 @@ public SKILL_Evasion( id, iHitZone )
 			iEvasionChance += DEX_EVADE_BONUS * ( p_data_attrib[id][ATTRIB_DEXTERITY] - MAX_ATTRIBS_STARTPOINTS );
 		}
 		
-		if ( random_float( 0.0, 1.0 ) <= iEvasionChance )
+		if ( random_float( 0.01, 1.00 ) <= iEvasionChance )
 		{
 			new iGlowIntensity = random_num( 20, 50 );
 		

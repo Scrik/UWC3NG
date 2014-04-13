@@ -33,7 +33,7 @@ public SKILL_CriticalGrenade( iAttacker, iVictim, iDamage, iWeapon, iHitPlace )
 			// Magic resistance check
 			if ( p_data_resist[iVictim][RESIST_MAGIC] > 0 )
 			{
-				if ( random_float( 0.0, 1.0 ) <= ( p_data_resist[iVictim][RESIST_MAGIC] / MAX_RESIST_POINTS ) )
+				if ( ( random_float( 0.01, 1.00 ) * MAX_RESIST_POINTS ) <= p_data_resist[iVictim][RESIST_MAGIC] )
 				{
 					client_print( iVictim, print_chat, "%s Your magic resistance protects you from a critical grenade attack", MOD_NAME );
 					client_print( iAttacker, print_chat, "%s Your critical grenade attack is deflected by your target's magic resistance", MOD_NAME );
@@ -300,7 +300,7 @@ public SKILL_PhoenixCheck( id )
 	if ( iSkillLevel > 0 )
 	{
 		// Should the user be a Phoenix
-		if ( random_float( 0.0, 1.0 ) <= p_phoenix[iSkillLevel-1] ) 
+		if ( random_float( 0.01, 1.00 ) <= p_phoenix[iSkillLevel-1] ) 
 		{
 			p_data_b[id][PB_PHOENIX] = true;
 		}

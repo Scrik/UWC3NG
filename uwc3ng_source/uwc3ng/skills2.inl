@@ -387,7 +387,7 @@ public SKILL_Hex( iAttacker, iVictim )
 		}
 		
 		// Will the victim hexed?
-		if ( random_float( 0.0, 1.0 ) <= iHexChance )
+		if ( random_float( 0.01, 1.00 ) <= iHexChance )
 		{
 			// Is the player immun?
 			if ( p_data_b[iVictim][PB_CANT_RENDER] )
@@ -444,7 +444,7 @@ public SKILL_Bash( iAttacker, iVictim )
 		}
 		
 		// Will this hit a "bash" hit?
-		if ( random_float( 0.0, 1.0 ) <= iBashChance )
+		if ( random_float( 0.01, 1.00 ) <= iBashChance )
 		{
 			// Yes he is stunned
 			p_data_b[iVictim][PB_STUNNED] = true;
@@ -642,7 +642,7 @@ public _SKILL_DrawSerpentWard( parm[5] )
 				// Magic resistance check
 				if ( p_data_resist[targetid][RESIST_MAGIC] > 0 )
 				{
-					if ( random_float( 0.0, 1.0 ) <= ( p_data_resist[targetid][RESIST_MAGIC] / MAX_RESIST_POINTS ) )
+					if ( ( random_float( 0.01, 1.00 ) * MAX_RESIST_POINTS ) <= p_data_resist[targetid][RESIST_MAGIC] )
 					{
 						client_print( targetid, print_chat, "%s Your magic resistance protects you from a serpent ward attack", MOD_NAME );
 						
@@ -722,7 +722,7 @@ public SKILL_Banish( iAttacker, iVictim )
 		}
 		
 		// Will this a banish hit?
-		if ( random_float( 0.0, 1.0 ) <= iBanishChance )
+		if ( random_float( 0.01, 1.00 ) <= iBanishChance )
 		{
 			// Slap him three times without to do damage
 			user_slap( iVictim, 0 );
